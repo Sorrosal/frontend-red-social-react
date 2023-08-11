@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useForm from '../../hooks/useForm';
 import { Global } from '../../helpers/Global';
-import useAuth from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Login() {
 
@@ -13,7 +13,7 @@ export default function Login() {
         e.preventDefault();
 
         let userToLogin = form;
-
+        console.log(userToLogin);
         const request = await fetch(Global.url + "user/login", {
             method: "POST",
             body: JSON.stringify(userToLogin),
@@ -23,7 +23,9 @@ export default function Login() {
         });
         const data = await request.json();
 
-        if (data.stauts == "success") {
+        console.log(data);
+
+        if (data.status == "success") {
             localStorage.setItem("token", data.token);
             localStorage.setItem("user", JSON.stringify(data.user));
             setSaved("login");

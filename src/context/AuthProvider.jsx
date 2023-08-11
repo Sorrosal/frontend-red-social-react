@@ -2,9 +2,11 @@ import React from 'react'
 import { useState, useEffect, createContext } from 'react';
 import { Global } from '../helpers/Global';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
+    debugger;
 
     const [auth, setAuth] = useState({});
     const [counters, setCounters] = useState({});
@@ -45,20 +47,25 @@ export const AuthProvider = ({ children }) => {
             }
         });
         const dataCounters = await requestCounters.json();
+        debugger;
         // Setear el estado de auth
         setAuth(data.user);
         setCounters(dataCounters);
         setLoading(false);
     }
+
+
     return (
         <AuthContext.Provider
-            value={{
-                auth,
-                setAuth,
-                counters,
-                setCounters,
-                loading
-            }}>
+            value={
+                {
+                    auth,
+                    setAuth,
+                    counters,
+                    setCounters,
+                    loading
+                }
+            }>
             {children}
         </AuthContext.Provider>
     )

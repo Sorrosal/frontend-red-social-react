@@ -2,7 +2,7 @@ import React from 'react'
 import Header from './Header'
 import { Navigate, Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
-import useAuth from '../../../hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 
 export default function PrivateLayout() {
     const { auth, loading } = useAuth();

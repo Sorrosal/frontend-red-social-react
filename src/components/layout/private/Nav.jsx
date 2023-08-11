@@ -1,7 +1,7 @@
 import React from 'react'
 import avatar from '../../../assets/img/user.png';
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 import { Global } from '../../../helpers/Global';
 
 export default function Nav() {
