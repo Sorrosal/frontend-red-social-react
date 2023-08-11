@@ -35,7 +35,7 @@ export default function Register() {
                 {saved == 'saved' ?
                     <strong className='alert alert-success'>Usuario registrado correctamente</strong> : ''}
 
-                {saved == 'errpr' ?
+                {saved == 'error' ?
                     <strong className='alert alert-dange'>No se ha registrado el usuario</strong> : ''}
 
                 <form className='register-form' onSubmit={saveUser}>
@@ -58,6 +58,10 @@ export default function Register() {
                     <div className='form-group'>
                         <label htmlFor='email'>Correo electrónico</label>
                         <input type='email' name='email' onChange={changed} />
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='bio'>Bio</label>
+                        <input type='text' name='bio' onChange={changed} />
                     </div>
 
                     <div className='form-group'>

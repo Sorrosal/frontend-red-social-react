@@ -63,7 +63,7 @@ export default function Sidebar() {
                     <form className="container-form__form-post">
 
                         <div className="form-post__inputs">
-                            <label htmlFor="post" className="form-post__label">¿Que estás FUDDEANDO hoy?</label>
+                            <label htmlFor="post" className="form-post__label">¿Que estás pensando hoy?</label>
                             <textarea name="post" className="form-post__textarea"></textarea>
                         </div>
 

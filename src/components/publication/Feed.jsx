@@ -32,7 +32,7 @@ export default function Feed() {
                                 <a href="#" className="user-info__create-date">Hace 1 hora</a>
                             </div>
 
-                            <h4 className="post__content">Hola, he minteado 100M tokens más.</h4>
+                            <h4 className="post__content">Hola</h4>
 
                         </div>
 
@@ -62,12 +62,12 @@ export default function Feed() {
                         <div className="post__body">
 
                             <div className="post__user-info">
-                                <a href="#" className="user-info__name">Bitcoin Pendium</a>
+                                <a href="#" className="user-info__name">Bitcoin</a>
                                 <span className="user-info__divider"> | </span>
                                 <a href="#" className="user-info__create-date">Hace 1 hora</a>
                             </div>
 
-                            <h4 className="post__content">Chavales gracias por pagarme las vacaciones.</h4>
+                            <h4 className="post__content">Chavales </h4>
 
                         </div>
                     </div>
@@ -101,7 +101,7 @@ export default function Feed() {
                                 <a href="#" className="user-info__create-date">Hace 1 hora</a>
                             </div>
 
-                            <h4 className="post__content">Hola, he minteado 100M tokens más para el marketing que nunca llega.</h4>
+                            <h4 className="post__content">Hola</h4>
 
                         </div>
                     </div>
@@ -137,7 +137,7 @@ export default function Feed() {
                                 <a href="#" className="user-info__create-date">Hace 1 hora</a>
                             </div>
 
-                            <h4 className="post__content">Compraré en 17.</h4>
+                            <h4 className="post__content">KLK.</h4>
 
                         </div>
                     </div>
