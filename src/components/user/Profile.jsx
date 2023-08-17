@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import avatar from '../../assets/img/user.png';
 import { Link, useParams } from 'react-router-dom';
-import { GetProfile } from '../../helpers/getProfile';
+import { GetProfile } from '../../helpers/GetProfile';
 import { Global } from '../../helpers/Global';
 import { useAuth } from '../../hooks/useAuth';
 import PublicationList from '../publication/PublicationList';
@@ -149,13 +149,13 @@ export default function Profile() {
                 <div className="profile-info__stats">
 
                     <div className="stats__following">
-                        <Link to={"siguiendo/" + user._id} className="following__link">
+                        <Link to={"/social/siguiendo/" + user._id} className="following__link">
                             <span className="following__title">Siguiendo</span>
                             <span className="following__number">{counters.following >= 1 ? counters.following : 0}</span>
                         </Link>
                     </div>
                     <div className="stats__following">
-                        <Link to={"seguidores/" + user._id} className="following__link">
+                        <Link to={"/social/seguidores/" + user._id} className="following__link">
                             <span className="following__title">Seguidores</span>
                             <span className="following__number">{counters.followed >= 1 ? counters.followed : 0}</span>
                         </Link>
