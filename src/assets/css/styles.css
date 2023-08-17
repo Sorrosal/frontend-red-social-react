@@ -178,6 +178,10 @@ body {
     cursor: pointer;
 }
 
+.content__button--right {
+    float: right;
+}
+
 
 .content__button:hover,
 .content__btn-more-post:hover {
@@ -454,7 +458,7 @@ button {
 }
 
 .alert {
-    width: 50%;
+    width: 60%;
     display: block;
     padding: 1rem;
     margin-bottom: 1rem;
