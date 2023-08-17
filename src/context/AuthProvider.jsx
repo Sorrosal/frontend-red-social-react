@@ -6,8 +6,6 @@ export const AuthContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
-    debugger;
-
     const [auth, setAuth] = useState({});
     const [counters, setCounters] = useState({});
     const [loading, setLoading] = useState(true);
@@ -47,7 +45,6 @@ export const AuthProvider = ({ children }) => {
             }
         });
         const dataCounters = await requestCounters.json();
-        debugger;
         // Setear el estado de auth
         setAuth(data.user);
         setCounters(dataCounters);

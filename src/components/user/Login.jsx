@@ -13,7 +13,6 @@ export default function Login() {
         e.preventDefault();
 
         let userToLogin = form;
-        console.log(userToLogin);
         const request = await fetch(Global.url + "user/login", {
             method: "POST",
             body: JSON.stringify(userToLogin),
@@ -22,8 +21,6 @@ export default function Login() {
             }
         });
         const data = await request.json();
-
-        console.log(data);
 
         if (data.status == "success") {
             localStorage.setItem("token", data.token);

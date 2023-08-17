@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 
 export const UserList = ({ users, getUsers, following, setFollowing, page, setPage, more, loading }) => {
-    debugger;
     const { auth } = useAuth();
     const nextPage = () => {
         let next = page + 1;

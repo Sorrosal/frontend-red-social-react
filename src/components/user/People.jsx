@@ -15,7 +15,6 @@ export default function People() {
     }, []);
 
     const getUsers = async (nextPage = 1) => {
-        debugger;
         // Efecto de carga
         setLoading(true);
         // Petición para sacar usuarios

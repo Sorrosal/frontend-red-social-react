@@ -7,7 +7,6 @@ export default function Logout() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        debugger;
         // Vaciar localStorage
         localStorage.clear();
         // Setear estados globales a vacío
