@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { GetProfile } from '../../helpers/getProfile';
 import { Global } from '../../helpers/Global';
 import { useAuth } from '../../hooks/useAuth';
+import PublicationList from '../publication/PublicationList';
 
 export default function Profile() {
     const { auth } = useAuth();
@@ -113,13 +114,11 @@ export default function Profile() {
             if (!newProfile && publications.length >= (data.total - data.publications.length)) {
                 setMore(false);
             }
-        }
-    }
 
-    const nextPage = () => {
-        let next = page + 1;
-        setPage(next);
-        getPublications(next);
+            if (data.pages <= 1) {
+                setMore(false);
+            }
+        }
     }
     return (
         <>
@@ -133,14 +132,14 @@ export default function Profile() {
                     </div>
 
                     <div className="general-info__container-names">
-                        <p>
-                            <h1>{user.name} {user.surname}</h1>
-                            {user._id != auth._id && (iFollow
-                                ? <button onClick={() => unfollow(user._id)} className="content__button content__button--right post__button">Dejar de seguir</button>
-                                : <button onClick={() => follow(user._id)} className="content__button content__button--right">Seguir</button>
-                            )}
 
-                        </p>
+                        <h1>{user.name} {user.surname}</h1>
+                        {user._id != auth._id && (iFollow
+                            ? <button onClick={() => unfollow(user._id)} className="content__button content__button--right post__button">Dejar de seguir</button>
+                            : <button onClick={() => follow(user._id)} className="content__button content__button--right">Seguir</button>
+                        )}
+
+
                         <h2><p className="container-names__nickname">{user.nick}</p></h2>
                         <p>{user.bio}</p>
 
@@ -174,55 +173,17 @@ export default function Profile() {
                 </div>
             </header>
 
+            <PublicationList
+                publications={publications}
+                getPublications={getPublications}
+                page={page}
+                setPage={setPage}
+                more={more}
+                setMore={setMore}
+            />
 
 
-            <div className="content__posts">
 
-                {publications.map(publication => {
-                    return (
-                        <article className="posts__post" key={publication._id}>
-
-                            <div className="post__container">
-
-                                <div className="post__image-user">
-                                    <Link to={"/social/perfil/" + publication.user._id} className="post__image-link">
-                                        {publication.user.image != "default.png" && <img src={Global.url + "user/avatar/" + publication.user.image} className="post__user-image" alt="Foto de perfil" />}
-                                        {publication.user.image == "default.png" && <img src={avatar} className="post__user-image" alt="Foto de perfil" />}
-                                    </Link>
-                                </div>
-
-                                <div className="post__body">
-
-                                    <div className="post__user-info">
-                                        <a href="#" className="user-info__name">{publication.user.name + " " + publication.user.surname}</a>
-                                        <span className="user-info__divider"> | </span>
-                                        <a href="#" className="user-info__create-date">{publication.created_at}</a>
-                                    </div>
-
-                                    <h4 className="post__content">{publication.text}</h4>
-
-                                </div>
-
-                            </div>
-
-                            {auth._id == publication.user._id &&
-                                <div className="post__buttons">
-
-                                    <a href="#" className="post__button">
-                                        <i className="fa-solid fa-trash-can"></i>
-                                    </a>
-
-                                </div>
-                            }
-                        </article>
-                    );
-                })}
-            </div>
-            {more && <div className="content__container-btn">
-                <button className="content__btn-more-post" onClick={nextPage}>
-                    Ver mas publicaciones
-                </button>
-            </div>}
 
             <br />
         </>
