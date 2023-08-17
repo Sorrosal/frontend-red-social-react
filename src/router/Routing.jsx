@@ -4,7 +4,7 @@ import PublicLayout from '../components/layout/public/PublicLayout';
 import Login from '../components/user/Login';
 import Register from '../components/user/Register';
 import PrivateLayout from '../components/layout/private/PrivateLayout';
-import Feed from '../components/publication/feed';
+import Feed from '../components/publication/Feed';
 import { AuthProvider } from '../context/AuthProvider';
 import Logout from '../components/user/Logout';
 import People from '../components/user/People';
